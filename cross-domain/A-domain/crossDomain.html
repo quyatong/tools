@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cross</title>
+</head>
+<body>
+    <!--这个是做转发用的-->
+    <script type="text/javascript">
+        window.onload = function () {
+            var href = window.location.href;
+            var paramsStr = href.split('?')[1];
+            var params = {};
+            paramsStr = paramsStr.split('&');
+
+            for (var i = 0; i < paramsStr.length; i++) {
+                var paramKV = paramsStr[i].split('=');
+                params[paramKV[0]] = decodeURIComponent(paramKV[1]);
+            };
+            window.top.crossDomainTool.handle(params.method, params);
+        };
+    </script>
+</body>
+</html>

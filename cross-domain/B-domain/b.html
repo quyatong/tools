@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>b</title>
+    <script type="text/javascript" src="crossDomainTool.js"></script>
+    <style type="text/css">
+        body {
+            min-height: 300px;
+            background-color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            crossDomainTool.config('http://quyatong.baidu.com:8848/cross-domain/A-domain/crossDomain.html');
+            crossDomainTool.postMsg('resize', {
+                height: document.body.offsetHeight
+            });
+        }
+    </script>
+</body>
+</html>

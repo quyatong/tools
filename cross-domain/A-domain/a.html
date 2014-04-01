@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A(include B)</title>
+</head>
+<body>
+    <iframe id="b" src="http://qu.baidu.com:8848/cross-domain/B-domain/b.html"></iframe>
+    <script type="text/javascript">
+        var crossDomainTool = {
+            handle: function (method, parmas) {
+                this[method](parmas);
+            },
+            resize: function (parmas) {
+                var height = parmas.height;
+                document.getElementById('b').style.height = height + 'px';
+            }
+        };
+    </script>
+</body>
+</html>
